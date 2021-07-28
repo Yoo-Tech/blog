@@ -1,0 +1,45 @@
+<%- include('layouts/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Add Posts</h1>
+        </div>
+    </div>
+
+    <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="title" placeholder="Title" value="" required >
+                <label for="floatingInput">Title</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="heading" placeholder="Heading" value="" required >
+                <label for="floatingInput">Heading</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="article" placeholder="Article" value="" required >
+                <label for="floatingInput">Article</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="file" class="form-control" id="floatingInput" name="image" placeholder="" value="" >
+                <label for="floatingInput">Select Image</label>
+            </div>
+        </div>
+    
+        <div class="col-6 d-grid">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    
+    
+    </form>
+</div>
+
+
+<%- include('layouts/footer') %>

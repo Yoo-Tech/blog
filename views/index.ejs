@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooger</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./css/all.css">
+<!-- ----------------------owl carousel----------------- -->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+    <!-- --------------animation onscroll---------- -->
+    <link rel="stylesheet" href="./css/aos.css">
+
+    <!-- --Custom style -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+    <!-- nav -->
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Dev_Yusuf Blog </a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Category</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Archive</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">pages</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                
+            </div>
+        </div>
+    </nav>
+        
+    <!-- nav -->
+
+    <!-- ....main section...... -->
+
+    <main>
+        <!-- side title -->
+
+        <section class="site-title">
+            <div class="site-background" data-aos="fade-up" data-aos-delay="200">
+                <h3>Full Stack Developer</h3>
+                <h1>We Build And Manage Website, From Concept To Launch....And Beyond</h1>
+                <button class="btn">Explore</button>
+            </div>
+        </section>
+         <!-- side title -->
+
+         <!-- ----------------------------------blog carousel --------------------------------------->
+        <section>
+            
+            <div class="blog">
+                <div class="container">
+                    <div >
+                        <a href="/action"><i class="fas fa-edit fa-2x"></i></a>
+
+                    </div>
+                    <div class="owl-carousel owl-them blog-post">
+                        <% users.forEach((row, index) => { %>
+
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            
+                            <img src="<%= row.image  %>" alt="">
+                            <div class="blog-title">
+                                <h3 ><%= row.title  %></h3>
+                                <h6></h6>
+                                <button class="btn btn-blog"><a href="/read/<%= row._id  %>">Read</a></button>
+                                <span>2 minutes</span>
+                            </div>
+                        </div>
+                        <% }) %>
+                        <!-- <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./assets/lap.jpg" alt="">
+                            <div class="blog-title">
+                                <h3>Responsive Web Design</h3>
+                                <button class="btn btn-blog">Read</button>
+                                <span>2 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./assets/bird4.jpg" alt="">
+                            <div class="blog-title">
+                                <h3>Responsive Web Design</h3>
+                                <button class="btn btn-blog">Read</button>
+                                <span>2 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./assets/btc.JPG" alt="">
+                            <div class="blog-title">
+                                <h3>Responsive Web Design</h3>
+                                <button class="btn btn-blog">Read</button>
+                                <span>2 minutes</span>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="owl-navigation">
+                        <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                        <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+
+
+                    </div>
+                   
+
+                </div>
+            </div>
+            
+        </section>
+        <!-------------------------x---------------- blog carousel ------------------------->
+
+        <!-------------------------- side content------------ -->
+
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <% users.forEach((row, index) => { %>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div >
+                                <img src="<%= row.image  %>" class="img" alt="">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 21, 2021</span>
+                                <span> &nbsp;&nbsp; 10 Comments</span>
+
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <!-- <a class="a" href=#>Why you should learn JavaScript as a developer</a> -->
+                            <a class="a" href=#><%= row.title  %></a>
+                            <p><%= row.article  %></p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-long-arrow-alt-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <% }) %>
+                    <!-- <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div >
+                                <img src="./assets/btc.JPG" class="img" alt=#>
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 17, 2021</span>
+                                <span> &nbsp;&nbsp; 8 Comments</span>
+
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a class="a" href=#>Every Developer Should Involves In Crypto Investment</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas iusto animi quae enim nobis in nulla suscipit explicabo! Doloremque, minus distinctio. Cum corrupti repudiandae vitae reiciendis, optio blanditiis enim, voluptatum neque, iure ut culpa! Corporis reprehenderit nesciunt ea quisquam.</p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-long-arrow-alt-right"></i></button>
+                        </div>
+                    </div>
+                    <hr> -->
+                    <!-- <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div >
+                                <img src="./assets/portfolio-06.jpg" class="img" alt=#>
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 15, 2021</span>
+                                <span> &nbsp;&nbsp; 15 Comments</span>
+
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a class="a" href=#>Reason Why You Should Go On Holiday</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas iusto animi quae enim nobis in nulla suscipit explicabo! Doloremque, minus distinctio. Cum corrupti repudiandae vitae reiciendis, optio blanditiis enim, voluptatum neque, iure ut culpa! Corporis reprehenderit nesciunt ea quisquam.</p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-long-arrow-alt-right"></i></button>
+                        </div>
+                    </div>
+                    <hr> -->
+                    <!-- <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div >
+                                <img src="./assets/right-image.jpg" class="img" alt=>
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 10, 2021</span>
+                                <span> &nbsp;&nbsp; 15 Comments</span>
+
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a class="a" href=#>Coding As An Art</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas iusto animi quae enim nobis in nulla suscipit explicabo! Doloremque, minus distinctio. Cum corrupti repudiandae vitae reiciendis, optio blanditiis enim, voluptatum neque, iure ut culpa! Corporis reprehenderit nesciunt ea quisquam.</p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-long-arrow-alt-right"></i></button>
+                        </div>
+                    </div> -->
+
+                    <div class="pagination flex-row">
+                        <a href="#"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="pages">1</a>
+                        <a href="#" class="pages">2</a>
+                        <a href="#" class="pages">3</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <div class="category">
+                        <h2>Category</h2>
+                        <ul class="category-list">
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                                <a href="#">Software</a>
+                                <span>(05)</span>
+                            </li >
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                                <a href="#">Technology</a>
+                                <span>(07)</span>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="300">
+                                <a href="#">Lifestyle</a>
+                                <span>(03)</span>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                                <a href="#">Shopping</a>
+                                <span>(04)</span>
+                            </li >
+                            <li class="list-items"data-aos="fade-left" data-aos-delay="400">
+                                <a href="#">Investing</a>
+                                <span>(08)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="popular-post">
+                        <h2>Popular Post</h2>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                            <div class="post-image">
+                                <div >
+                                    <img src="./assets/code3.png" class="img" alt="">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 21, 2021</span>
+                                    <span> &nbsp;&nbsp; 10 Comments</span>
+    
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a class="" href="#">Why you should learn JavaScript as a developer</a>
+                                
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+                            <div class="post-image">
+                                <div >
+                                    <img src="./assets/right-image.jpg" class="img" alt="">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 21, 2021</span>
+                                    <span> &nbsp;&nbsp; 15 Comments</span>
+    
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a class="a" href="#">Coding As An Art</a>
+                                
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="400">
+                            <div class="post-image">
+                                <div >
+                                    <img src="./assets/portfolio-06.jpg" class="img" alt="">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 21, 2021</span>
+                                    <span> &nbsp;&nbsp; 15 Comments</span>
+    
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a class="a" href="#">Reason Why You Should Go On Holiday</a>
+                                
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="500">
+                            <div class="post-image">
+                                <div >
+                                    <img src="./assets/left-image.jpg" class="img" alt="">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin &nbsp;</span>
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;July 21, 2021</span>
+                                    <span> &nbsp;&nbsp; 2 Comments</span>
+    
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a class="a" href="#">Why you should learn JavaScript as a developer</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                        <h2>Newsletter</h2>
+                        <div class="form-element">
+                            <input type="email" class="input-element" placeholder="Email">
+                            <button class="btn form-btn">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="popular-tags">
+                        <h2>Popular Tags</h2>
+                        <div class="tags flex-row">
+                            <span class="tag" data-aos="flip-up" data-aos-delay="100">Software</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="200">Technology</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="300">Developer</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="400">Lifestyle</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="500">JavaScript</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="600">Holiday</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="700">Coding</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="800">Investing</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <!------------------------------ side content----x-------- -->
+
+
+
+    </main>
+
+    <!-- ....main section.....x------------------x-----------. -->
+
+    <!-- --------footer-x--------------x-------------------- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quibusdam doloribus consectetur corrupti sapiente dolores? Sapiente officia dolorum magnam maiores!</p>
+            </div>
+            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                <h2>Newsletter</h2>
+                <p>Stay update with our latest</p>
+                <div class="form-element">
+                    <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Instagram</h2>
+                <div class="flex-row">
+                    <img src="./assets/pic.jpg" alt="">
+                    <img src="./assets/portfolio-01.jpg" alt="">
+                    <img src="./assets/lap3.jpg" alt="">
+                </div>
+                <div class="flex-row">
+                    <img src="./assets/portfolio-03.jpg" alt="">
+                    <img src="./assets/lap2.jpg" alt="">
+                    <img src="./assets/portfolio-05.jpg" alt="">
+                </div>
+            </div>
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Follow Us</h2>
+                <p>Let us be Social</p>
+                <div>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+            </div>
+        </div>
+        <div class="rights flew-row">
+            <h4 class="text-gray">
+                Copyright &copy; 2020 Yoo Design
+            </h4>
+        </div>
+        <div class="move-up" data-aos="fade-up" data-aos-delay="100">
+            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+    </footer>
+    <!-- --------footer-x--------------x-------------------- -->
+
+
+
+    
+
+<!----------------------- jQuery ------------------------------->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <!----------------------- Aos ------------------------------->
+<script src="./js/aos.js"></script>
+
+<!----------------------- custom js ------------------------------->
+
+    <script src="./js/main.js"></script>
+
+
+</body>
+</html>
